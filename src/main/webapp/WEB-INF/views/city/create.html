@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create City</title>
+</head>
+<body>
+<p>
+    <a href="/list-city">City list</a>
+</p>
+<form th:action="@{/create-city}" th:object="${city}" method="post" >
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" th:field="*{name}" ></td>
+        </tr>
+        <tr>
+            <td>Country</td>
+            <td>
+                <select th:field="*{country}">
+                    <option th:each="p: ${countrys}" th:value="${p.id}" th:text="${p.name}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Area</td>
+            <td><input type="text" th:field="*{area}" placeholder=""></td>
+        </tr>
+        <tr>
+            <td> Population</td>
+            <td><input type="text" th:field="*{population}" ></td>
+        </tr>
+        <tr>
+            <td>GDP</td>
+            <td><input type="text" th:field="*{gdp}" ></td>
+        </tr>
+        <tr>
+            <td>Painted</td>
+            <td><input type="text" th:field="*{painted}" ></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Create"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

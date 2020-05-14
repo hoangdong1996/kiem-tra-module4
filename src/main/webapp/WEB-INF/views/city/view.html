@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View blog</title>
+</head>
+<body>
+<h1>View city</h1>
+<p>
+    <a href="/list-city">City list</a>
+</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Area</th>
+        <th>Population</th>
+        <th>Gdp</th>
+        <th>Painted</th>
+    </tr>
+    <th:block th:object="${city}">
+        <tr >
+            <td th:text="${city.name}"></td>
+            <td th:text="${city.country.name}"></td>
+            <td th:text="${city.area}"></td>
+            <td th:text="${city.population}"></td>
+            <td th:text="${city.gdp}"></td>
+            <td th:text="${city.painted}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
